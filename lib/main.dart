@@ -1,19 +1,23 @@
 import "package:flutter/material.dart";
 import 'package:google_fonts/google_fonts.dart';
-import 'screens/categories.dart';
+import 'package:meals/screens/tabs.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-final theme =ThemeData(
+final theme = ThemeData(
   useMaterial3: true,
-  colorScheme: ColorScheme.fromSeed(brightness: Brightness.dark,seedColor: const Color.fromARGB(255, 72, 199, 13)),
-  textTheme: GoogleFonts.latoTextTheme()
+  colorScheme: ColorScheme.fromSeed(
+    brightness: Brightness.dark,
+    seedColor: const Color.fromARGB(255, 62, 161, 16),
+  ),
+  textTheme: GoogleFonts.latoTextTheme(),
+  
 );
 
-
-void main(){
-  runApp(const App());
+void main() {
+  runApp(const ProviderScope( child: App() ) );
 }
 
-class App extends StatelessWidget{
+class App extends StatelessWidget {
   const App({super.key});
 
   @override
@@ -21,12 +25,7 @@ class App extends StatelessWidget{
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: theme,
-      home:  CategoriesScreen(),
+      home: TabScreen()
     );
   }
-
-
-
-
-
 }

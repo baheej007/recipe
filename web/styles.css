@@ -1,0 +1,4 @@
+/* Remove Chrome's blue focus overlay */
+*:focus {
+  outline: none !important;
+}
